@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRANA - Via Urbana</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        #img {
+            float: right;
+            width: 800px;
+            height: 500px;
+            border-radius: 50pt;
+        }
+
+        h1 {
+            font: 50px Serif;
+            text-align: center;
+        }
+        body {
+            background-color: rgb(153, 199, 184);
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: left;
+            background-image: url(./jnkr63er.png);
+            color: white;
+            text-shadow: black 05px 02px 1px;
+        }
+        
+        #ver{
+            width: 150px;
+            height: 50px;
+            font-weight: bold;
+            font-size: 25px;
+            font-family: serif;
+            border-radius: 10px;
+            background-color: rgb(59, 131, 1);
+            color:white
+        }
+
+        #ver:hover {
+            background-color: rgb(255, 0, 0);
+        }
+
+        #txtvel {
+            width: 150px;
+            height: 25px;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        p {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <h1><strong>Sistema de multas de uma via urbana</strong></h1>
+    <br>
+    <br>
+    <img src="./jbfqibfg.png" id="img">
+    <p>Velocidade do carro: <p></p><input type="number" name="txtvel" id="txtvel"></p>
+    <input type="button" id="ver" value="Verificar" onclick="calcular()">
+    <div id="res">
+    </div>
+
+    <script>
+        function calcular() {
+            var txtv = document.getElementById('txtvel')
+            var vel = Number(txtv.value)
+            var res = document.getElementById('res')
+            res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}km/h</strong></p>`
+            if (vel > 80) {
+                res.innerHTML += `<strong>Você está MULTADO por excesso de velocidade!!</strong>`
+            } else {
+                res.innerHTML += `<strong>Sua velocidade está PERMITIDA!!</strong>`
+            }
+            res.innerHTML += `<p>Digira sempre com cinto de segurança!!</p>`
+            var ver = document.getElementById('ver')
+            ver.value = 'Verificado!'
+        }
+
+    </script>
+</body>
+</html>
